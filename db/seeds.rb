@@ -19,3 +19,15 @@ design_skills.each do |skill|
 end
 
 # TODO: create associations between users and skills
+users = User.all
+skills = Skill.all
+
+100.times do
+	users.sample.user_skills << UserSkill.create(
+		skill:skills.sample,
+		proficiency:rand(50)+50)
+	# UserSkill.create(
+	# 	user: users.sample,
+	# 	skill: skills.sample,
+	# 	proficiency:rand(50)+50)
+end
